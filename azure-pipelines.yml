@@ -20,7 +20,7 @@ steps:
     inputs:
       TomcatUrl: '$(url)'
       Username: '$(user)'
-      Password: '$(password)'
+      Password: '$(pass)'
       Warfile: 'target/myweb-8.7.3.war'
       Context: '/myapp'
       ServerVersion: '7OrAbove'
