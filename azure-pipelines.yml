@@ -15,4 +15,13 @@ steps:
       mavenAuthenticateFeed: false
       effectivePomSkip: false
       sonarQubeRunAnalysis: false
+      
+  - task: TomcatDeployment@1
+    inputs:
+      TomcatUrl: 'http://20.235.242.174:8080'
+      Username: 'tomcat'
+      Password: 'admin@123'
+      Warfile: 'target/myweb-8.7.3.war'
+      Context: '/myapp'
+      ServerVersion: '7OrAbove'
 
