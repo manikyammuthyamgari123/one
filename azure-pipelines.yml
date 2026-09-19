@@ -2,19 +2,17 @@ trigger:
 - master
 
 pool:
-  name: flm-pool
+  name: My-agent-pool
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Stage-1'
+  - task: Maven@4
+    inputs:
+      mavenPomFile: 'pom.xml'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      effectivePomSkip: false
+      sonarQubeRunAnalysis: false
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Stage-2'
-
-- script: echo "Welcome to azure class"
-  displayName: 'Stage-3'
-
-- script: echo "This is my last stage"
-  displayName: 'Stage-4'
