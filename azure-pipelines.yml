@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: flm-pool1
+  name: flm-pool
 
 steps:
 - script: echo Hello, world!
